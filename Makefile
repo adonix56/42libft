@@ -6,7 +6,7 @@
 #    By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/16 10:40:30 by jsalanga          #+#    #+#              #
-#    Updated: 2018/04/23 12:33:04 by jsalanga         ###   ########.fr        #
+#    Updated: 2018/04/23 19:16:09 by jsalanga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ $(NAME): ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o \
 	ft_tolower.o ft_memalloc.o ft_memdel.o ft_strnew.o ft_strdel.o \
 	ft_strclr.o ft_striter.o ft_striteri.o ft_strmap.o ft_strmapi.o \
 	ft_strequ.o ft_strnequ.o ft_strsub.o ft_strjoin.o ft_strtrim.o \
-	ft_strsplit.o ft_itoa.o ft_putchar.o ft_putstr.o ft_putendl.o ft_putnbr.o \
+	ft_strsplit.o ft_putchar.o ft_putstr.o ft_putendl.o ft_putnbr.o \
 	ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o \
 	ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o \
 	ft_countwords.o
