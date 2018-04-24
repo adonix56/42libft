@@ -6,50 +6,46 @@
 /*   By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 19:29:04 by jsalanga          #+#    #+#             */
-/*   Updated: 2018/04/23 20:54:57 by jsalanga         ###   ########.fr       */
+/*   Updated: 2018/04/23 21:00:42 by jsalanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	digit_count(long n)
+static int	digit_count(long n)
 {
-	size_t i;
+	int ret;
 
-	i = 1;
-	if (n < 0)
-		n = -n;
+	ret = 1;
 	while (n >= 10)
 	{
-		i++;
 		n /= 10;
+		ret++;
 	}
-	return (i);
+	return (ret++);
 }
 
-char			*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	long	v;
+	long	nbr;
 	size_t	count;
 	char	*str;
 	char	neg;
 
-	v = n;
-	neg = (v < 0 ? 1 : 0);
-	count = digit_count(v);
+	neg = (nbr < 0 ? 1 : 0);
+	if (neg)
+		nbr = -nbr;
+	count = digit_count(nbr);
 	str = ft_strnew(count + neg);
 	if (str == NULL)
 		return (NULL);
 	if (neg)
-	{
-		v = -v;
 		str[0] = '-';
-	}
 	while (count > 0)
 	{
-		str[count + neg - 1] = (v % 10) + '0';
+		str[count + neg - 1] = nbr % 10 + '0';
 		count--;
-		v /= 10;
+		nbr /= 10;
 	}
 	return (str);
 }
