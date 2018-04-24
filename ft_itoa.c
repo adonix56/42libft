@@ -6,7 +6,7 @@
 /*   By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 19:29:04 by jsalanga          #+#    #+#             */
-/*   Updated: 2018/04/23 21:01:46 by jsalanga         ###   ########.fr       */
+/*   Updated: 2018/04/23 21:04:01 by jsalanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,15 @@ static int	digit_count(long n)
 	return (ret++);
 }
 
+static void	calc_neg(int *neg, long *nbr)
+{
+	if (*nbr < 0)
+	{
+		*neg = 1;
+		*nbr = -*nbr;
+	}
+}
+
 char		*ft_itoa(int n)
 {
 	long	nbr;
@@ -33,9 +42,8 @@ char		*ft_itoa(int n)
 	char	neg;
 
 	nbr = n;
-	neg = (nbr < 0 ? 1 : 0);
-	if (neg)
-		nbr = -nbr;
+	neg = 0;
+	calc_neg(&neg, &nbr);
 	count = digit_count(nbr);
 	str = ft_strnew(count + neg);
 	if (str == NULL)
