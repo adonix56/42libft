@@ -6,7 +6,7 @@
 /*   By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 19:29:04 by jsalanga          #+#    #+#             */
-/*   Updated: 2018/04/23 20:41:11 by jsalanga         ###   ########.fr       */
+/*   Updated: 2018/04/23 20:46:07 by jsalanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ char		*ft_itoa(int n)
 	ret = ft_strnew(len);
 	if (ret)
 	{
-		ret[len--] = '\0';
 		while (len >= neg)
 		{
 			ret[--len] = n % 10 + '0';
