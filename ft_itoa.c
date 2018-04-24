@@ -6,13 +6,13 @@
 /*   By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 19:29:04 by jsalanga          #+#    #+#             */
-/*   Updated: 2018/04/20 12:41:34 by jsalanga         ###   ########.fr       */
+/*   Updated: 2018/04/23 20:26:03 by jsalanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	digits(int n)
+static int	count_digit(int n)
 {
 	int ret;
 
@@ -25,7 +25,7 @@ static int	digits(int n)
 	return (ret);
 }
 
-static void	calc_neg(int *neg, int *n)
+static void	calc_negs(int *neg, int *n)
 {
 	if (*n < 0)
 	{
@@ -43,8 +43,8 @@ char		*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	neg = 0;
-	calc_neg(&neg, &n);
-	len = digits(n) + neg + 1;
+	calc_negs(&neg, &n);
+	len = count_digit(n) + neg + 1;
 	ret = (char *)malloc(sizeof(char) * (len));
 	if (ret)
 	{
