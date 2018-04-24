@@ -6,7 +6,7 @@
 /*   By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 19:29:04 by jsalanga          #+#    #+#             */
-/*   Updated: 2018/04/20 12:41:34 by jsalanga         ###   ########.fr       */
+/*   Updated: 2018/04/23 19:29:45 by jsalanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	calc_neg(int *neg, int *n)
 
 char		*ft_itoa(int n)
 {
-	char	*ret;
+	/*char	*ret;
 	int		neg;
 	int		len;
 
@@ -57,5 +57,6 @@ char		*ft_itoa(int n)
 		if (neg)
 			ret[0] = '-';
 	}
-	return (ret);
+	return (ret);*/
+	return (0);
 }
