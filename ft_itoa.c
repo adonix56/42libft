@@ -6,7 +6,7 @@
 /*   By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 19:29:04 by jsalanga          #+#    #+#             */
-/*   Updated: 2018/04/23 21:04:01 by jsalanga         ###   ########.fr       */
+/*   Updated: 2018/04/23 21:05:16 by jsalanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char		*ft_itoa(int n)
 	long	nbr;
 	size_t	count;
 	char	*str;
-	char	neg;
+	int		neg;
 
 	nbr = n;
 	neg = 0;
