@@ -6,51 +6,56 @@
 /*   By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 19:29:04 by jsalanga          #+#    #+#             */
-/*   Updated: 2018/04/23 20:20:04 by jsalanga         ###   ########.fr       */
+/*   Updated: 2018/04/20 12:41:34 by jsalanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-static size_t	digit_count(long n)
+static int	digits(int n)
 {
-	size_t i;
+	int ret;
 
-	i = 1;
-	if (n < 0)
-		n = -n;
+	ret = 1;
 	while (n >= 10)
 	{
-		i++;
 		n /= 10;
+		ret++;
 	}
-	return (i);
+	return (ret);
 }
 
-char			*ft_itoa(int n)
+static void	calc_neg(int *neg, int *n)
 {
-	long	v;
-	size_t	count;
-	char	*str;
-	char	neg;
+	if (*n < 0)
+	{
+		*neg = 1;
+		*n = -*n;
+	}
+}
 
-	v = n;
-	neg = (v < 0 ? 1 : 0);
-	count = digit_count(v);
-	str = ft_strnew(count + neg);
-	if (str == NULL)
-		return (NULL);
-	if (neg)
+char		*ft_itoa(int n)
+{
+	char	*ret;
+	int		neg;
+	int		len;
+
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	neg = 0;
+	calc_neg(&neg, &n);
+	len = digits(n) + neg + 1;
+	ret = (char *)malloc(sizeof(char) * (len));
+	if (ret)
 	{
-		v = -v;
-		str[0] = '-';
+		ret[--len] = '\0';
+		while (len >= neg)
+		{
+			ret[--len] = n % 10 + '0';
+			n /= 10;
+		}
+		if (neg)
+			ret[0] = '-';
 	}
-	while (count > 0)
-	{
-		str[count + neg - 1] = (v % 10) + '0';
-		count--;
-		v /= 10;
-	}
-	return (str);
+	return (ret);
 }
