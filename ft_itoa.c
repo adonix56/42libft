@@ -6,7 +6,7 @@
 /*   By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 19:29:04 by jsalanga          #+#    #+#             */
-/*   Updated: 2018/04/23 20:49:23 by jsalanga         ###   ########.fr       */
+/*   Updated: 2018/04/23 20:52:29 by jsalanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ static int	count_digits(long n)
 	return (ret);
 }
 
-
 char		*ft_itoa(int n)
 {
 	long	nbr;
@@ -34,15 +33,15 @@ char		*ft_itoa(int n)
 	int		len;
 
 	nbr = n;
-	neg = (v < 0 ? 1 : 0);
+	neg = (nbr < 0 ? 1 : 0);
 	len = count_digits(nbr) + neg;
 	ret = ft_strnew(len);
 	if (ret)
 	{
 		while (len >= neg)
 		{
-			ret[--len] = n % 10 + '0';
-			n /= 10;
+			ret[--len] = nbr % 10 + '0';
+			nbr /= 10;
 		}
 		if (neg)
 			ret[0] = '-';
