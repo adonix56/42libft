@@ -6,7 +6,7 @@
 /*   By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 19:29:04 by jsalanga          #+#    #+#             */
-/*   Updated: 2018/04/23 21:00:42 by jsalanga         ###   ########.fr       */
+/*   Updated: 2018/04/23 21:01:46 by jsalanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char		*ft_itoa(int n)
 	char	*str;
 	char	neg;
 
+	nbr = n;
 	neg = (nbr < 0 ? 1 : 0);
 	if (neg)
 		nbr = -nbr;
