@@ -6,7 +6,7 @@
 /*   By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/16 11:05:22 by jsalanga          #+#    #+#             */
-/*   Updated: 2018/04/23 12:33:30 by jsalanga         ###   ########.fr       */
+/*   Updated: 2018/04/24 15:41:42 by jsalanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,9 @@ void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				ft_countwords(char const *s, char c);
+void			ft_lstinsert(t_list **lst, t_list *add, int idx);
+t_list			*ft_lstrev(t_list *lst);
+size_t			ft_digits(long n);
+void			ft_lstaddend(t_list **alst, t_list *add);
 
 #endif

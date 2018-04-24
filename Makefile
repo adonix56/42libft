@@ -6,7 +6,7 @@
 #    By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/16 10:40:30 by jsalanga          #+#    #+#              #
-#    Updated: 2018/04/23 12:33:04 by jsalanga         ###   ########.fr        #
+#    Updated: 2018/04/24 15:42:18 by jsalanga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME): ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o \
 	ft_strsplit.o ft_itoa.o ft_putchar.o ft_putstr.o ft_putendl.o ft_putnbr.o \
 	ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o \
 	ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o \
-	ft_countwords.o
+	ft_countwords.o ft_lstinsert.o ft_lstrev.o ft_digits.o ft_lstaddend.o
 	@ar rc $(NAME) ft*.o
 	@ranlib $(NAME)
 
@@ -37,26 +37,6 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
-
-s1: ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o ft_memchr.o
-
-s2: ft_memcmp.o ft_strlen.o ft_strdup.o ft_strcpy.o ft_strncpy.o ft_strcat.o
-
-s3: ft_strncat.o ft_strlcat.o ft_strchr.o ft_strrchr.o ft_strstr.o ft_strnstr.o
-
-s4: ft_strcmp.o ft_strncmp.o ft_atoi.o ft_isalpha.o ft_isdigit.o ft_isalnum.o
-
-s5: ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_memalloc.o ft_memdel.o
-
-s6: ft_strnew.o ft_strdel.o ft_strclr.o ft_striter.o ft_striteri.o ft_strmap.o
-
-s7: ft_strmapi.o ft_strequ.o ft_strnequ.o ft_strsub.o ft_strjoin.o ft_strtrim.o
-
-s8: ft_strsplit.o ft_itoa.o ft_putchar.o ft_putstr.o ft_putendl.o ft_putnbr.o
-
-s9: ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o
-
-s10: ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o
 
 ft_memset.o: ft_memset.c
 	@gcc -c $(FLAGS) ft_memset.c
@@ -234,3 +214,15 @@ ft_lstmap.o: ft_lstmap.c
 
 ft_countwords.o: ft_countwords.c
 	@gcc -c $(FLAGS) ft_countwords.c
+
+ft_lstinsert.o: ft_lstinsert.c
+	@gcc -c $(FLAGS) ft_lstinsert.c
+
+ft_lstrev.o: ft_lstrev.c
+	@gcc -c $(FLAGS) ft_lstrev.c
+
+ft_digits.o: ft_digits.c
+	@gcc -c $(FLAGS) ft_digits.c
+
+ft_lstaddend.o: ft_lstaddend.c
+	@gcc -c $(FLAGS) ft_lstaddend.c
