@@ -6,15 +6,15 @@
 /*   By: jsalanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/18 19:29:04 by jsalanga          #+#    #+#             */
-/*   Updated: 2018/04/23 20:26:03 by jsalanga         ###   ########.fr       */
+/*   Updated: 2018/04/23 20:29:25 by jsalanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_digit(int n)
+static size_t	count_digit(long n)
 {
-	int ret;
+	size_t ret;
 
 	ret = 1;
 	while (n >= 10)
@@ -25,7 +25,7 @@ static int	count_digit(int n)
 	return (ret);
 }
 
-static void	calc_negs(int *neg, int *n)
+static void		calc_negs(int *neg, int *n)
 {
 	if (*n < 0)
 	{
@@ -34,11 +34,11 @@ static void	calc_negs(int *neg, int *n)
 	}
 }
 
-char		*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*ret;
 	int		neg;
-	int		len;
+	size_t	len;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
@@ -49,7 +49,7 @@ char		*ft_itoa(int n)
 	if (ret)
 	{
 		ret[--len] = '\0';
-		while (len >= neg)
+		while (len >= (size_t)neg)
 		{
 			ret[--len] = n % 10 + '0';
 			n /= 10;
